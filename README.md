@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+# Project Timeline Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web-based tool for creating professional project timelines with customizable categories, tasks, and milestones. Export your timelines as PNG images or CSV files.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Customizable Categories**: Create swimlanes for different project phases (Plan, Test, Develop, Launch, etc.)
+- **Tasks with Multiple Styles**: Add tasks as bars or arrows with custom colors and durations
+- **Milestones**: Mark important dates with flag or diamond markers
+- **Auto-scaling Timeline**: Automatically generates monthly columns based on project duration
+- **Current Date Indicator**: Red vertical line shows today's date on the timeline
+- **Visual Customization**: Adjust row heights, font sizes, and column widths
+- **CSV Import/Export**: Save and load projects using CSV files
+- **PNG Export**: Export timeline as high-quality PNG images (2x scale) for presentations
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The project has already been set up with all dependencies installed.
 
-### `npm test`
+### Running the App
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+cd timeline-generator
+npm start
+```
 
-### `npm run build`
+The app will open in your browser at `http://localhost:3000`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Building for Production
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm run build
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How to Use
 
-### `npm run eject`
+### 1. Set Project Details
+- **Start Date**: When your project begins
+- **Number of Weeks**: (Optional) Auto-calculates end date based on start date
+- **End Date**: When your project ends
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Manage Categories
+- Default categories: Plan, Test, Develop, Launch
+- Add new categories with custom names and colors
+- Edit or delete existing categories
+- Each category appears as a horizontal swimlane
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 3. Add Tasks
+- **Name**: Task description
+- **Category**: Which swimlane the task appears in
+- **Start Date**: When the task begins
+- **Duration (Weeks)**: How long the task takes (supports decimals like 0.5)
+- **Style**: Bar (rectangle) or Arrow (with pointed end)
+- **Color**: Custom color for the task
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 4. Add Milestones
+- **Name**: Milestone description
+- **Date**: When the milestone occurs
+- **Type**: Flag or Diamond marker
+- **Color**: Custom color for the marker
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 5. Customize Visuals
+- **Row Height**: Height of each category row (40-200px)
+- **Font Size**: Text size throughout the timeline (8-24px)
+- **Header Height**: Height of the month header row (30-100px)
+- **Month Column Width**: Minimum width for month labels (40-150px)
 
-## Learn More
+### 6. Import/Export
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Export CSV**: Save your entire project configuration to a CSV file
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Import CSV**: Load a previously saved project from CSV
 
-### Code Splitting
+**Export PNG**: Download the timeline as a PNG image for use in presentations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## CSV Format
 
-### Analyzing the Bundle Size
+The CSV export includes all project data in sections:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+PROJECT_DATA
+startDate,endDate,numberOfWeeks
+2024-01-01,2024-12-31,52
 
-### Making a Progressive Web App
+CATEGORIES
+id,name,color
+1,Plan,#ADD8E6
+2,Test,#FFE4B5
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+TASKS
+id,name,categoryId,startDate,durationWeeks,color,style
+1,Planning Phase,1,2024-01-01,4,#4A90E2,bar
 
-### Advanced Configuration
+MILESTONES
+id,name,date,type,color
+1,Project Kickoff,2024-01-01,flag,#E74C3C
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+VISUAL_SETTINGS
+rowHeight,fontSize,headerHeight,monthColumnWidth
+80,12,40,60
+```
 
-### Deployment
+## Tips for Google Slides
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The exported PNG is optimized for Google Slides:
+- High resolution (2x scale) for crisp images
+- Standard aspect ratio
+- White background
+- Copy and paste directly into slides
 
-### `npm run build` fails to minify
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **React**: UI framework
+- **html2canvas**: PNG export functionality
+- **PapaParse**: CSV import/export
+- **date-fns**: Date manipulation and formatting
+
+## Browser Support
+
+Works in all modern browsers that support ES6+ and HTML5 Canvas.

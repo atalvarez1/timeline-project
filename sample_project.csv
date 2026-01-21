@@ -1,0 +1,45 @@
+PROJECT_DATA
+startDate,endDate,numberOfWeeks
+2024-01-01,2024-12-31,52
+
+CATEGORIES
+id,name,color
+1,Data Integration,#ADD8E6
+2,Solution Design,#FFE4B5
+3,Configuration,#90EE90
+
+TASKS
+id,name,categoryId,startDate,durationWeeks,color,style
+1,Assemble Resources,1,2024-01-15,4,#4A90E2,bar
+2,Working Plans,1,2024-02-15,6,#5B9BD5,bar
+3,Subcontractor Selection,1,2024-03-01,8,#70A9DB,bar
+4,Helpdesk Content Plan,1,2024-04-01,12,#85B8E1,bar
+5,Performance Validation,2,2024-03-15,6,#F4A460,bar
+6,Test Complete,2,2024-05-01,2,#E89356,bar
+7,Monitoring,2,2024-06-15,8,#DC824C,bar
+8,Integration I,2,2024-05-15,4,#D07142,bar
+9,Integration II,2,2024-07-01,6,#C46038,bar
+10,Integration III,2,2024-09-01,8,#B84F2E,bar
+11,Prototype,3,2024-03-01,6,#6BB86B,arrow
+12,Alpha Build,3,2024-04-15,4,#5FA75F,arrow
+13,Development Phase I,3,2024-04-01,16,#53A053,bar
+14,Development Phase II,3,2024-08-01,12,#479647,bar
+15,RC Pilot Deployment,3,2024-09-01,6,#3B8C3B,bar
+16,RTW Deployment,3,2024-10-01,8,#2F822F,bar
+17,V.2 Development Begin,3,2024-11-01,8,#237823,bar
+
+MILESTONES
+id,name,date,type,color
+1,Project Kickoff,2024-01-15,flag,#228B22
+2,Executive Review,2024-03-10,flag,#DC143C
+3,Executive Decision,2024-04-27,flag,#DC143C
+4,Beta Release,2024-06-30,flag,#4169E1
+5,Release Candidate,2024-10-01,flag,#4682B4
+6,Final Release,2024-10-20,flag,#32CD32
+7,Planning R2 Begin,2024-09-15,diamond,#8B4513
+8,Phase Sync,2024-05-15,diamond,#FF8C00
+9,Load Balance,2024-09-15,diamond,#FFD700
+
+VISUAL_SETTINGS
+rowHeight,fontSize,headerHeight,monthColumnWidth
+150,12,50,60
